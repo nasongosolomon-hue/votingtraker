@@ -28,4 +28,4 @@ A simplified digital voting application that allows users to view candidates, ca
 ## 📦 How to Run the Project
 1. Clone this repository to your local machine:
    ```bash
-   git clone [https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git](https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git)
+   git clone [git@github.com:nasongosolomon-hue/votingtraker.git)
