@@ -63,3 +63,13 @@ function initVotingPage() {
     });
 }
 
+/**
+ * --- RESULTS PAGE LOGIC ---
+ * Displays data and calculates stats
+ */
+function initResultsPage() {
+    const listContainer = document.getElementById('results-list');
+    const totalDisplay = document.getElementById('totalVotesCount');
+    const winnerDisplay = document.getElementById('leadingCandidate');
+
+   
