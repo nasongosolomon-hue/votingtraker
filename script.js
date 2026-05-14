@@ -43,4 +43,13 @@ function initVotingPage() {
             return;
         }
 
+        // Create Vote Object
+        const newVote = {
+            id: Date.now(), // Unique ID
+            name: voterName,
+            voterID: voterID,
+            candidate: selection,
+            date: new Date().toLocaleString()
+        };
+
        
