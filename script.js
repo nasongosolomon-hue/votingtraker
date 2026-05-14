@@ -72,4 +72,12 @@ function initResultsPage() {
     const totalDisplay = document.getElementById('totalVotesCount');
     const winnerDisplay = document.getElementById('leadingCandidate');
 
+    // Update Stats Summary
+    totalDisplay.innerText = electionData.length;
+
+    if (electionData.length === 0) {
+        listContainer.innerHTML = "<p>No ballots have been cast yet.</p>";
+        return;
+    }
+
    
