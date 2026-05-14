@@ -80,4 +80,13 @@ function initResultsPage() {
         return;
     }
 
-   
+    // Calculate Leader (Simple Logic)
+    const counts = {};
+    electionData.forEach(vote => {
+        counts[vote.candidate] = (counts[vote.candidate] || 0) + 1;
+    });
+
+    const leader = Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b);
+    winnerDisplay.innerText = leader;
+
+    
