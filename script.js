@@ -56,4 +56,10 @@ function initVotingPage() {
         electionData.push(newVote);
         localStorage.setItem('electionData', JSON.stringify(electionData));
 
-       
+        // DOM Manipulation: Show success message
+        votingForm.classList.add('hidden');
+        feedbackBox.classList.remove('hidden');
+        feedbackMsg.innerHTML = `Success! <strong>${voterName}</strong>, your ballot for <strong>${selection}</strong> has been cast.`;
+    });
+}
+
