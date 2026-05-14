@@ -89,4 +89,17 @@ function initResultsPage() {
     const leader = Object.keys(counts).reduce((a, b) => counts[a] > counts[b] ? a : b);
     winnerDisplay.innerText = leader;
 
-    
+    // DOM Manipulation: Build the voting log
+    listContainer.innerHTML = ""; // Clear loading text
+    electionData.reverse().forEach(vote => {
+        const div = document.createElement('article');
+        div.className = 'vote-entry';
+        div.innerHTML = `
+            <span><strong>${vote.candidate}</strong></span>
+            <span>Voter ID: ****${vote.voterID.slice(-3)}</span>
+            <span>${vote.date}</span>
+        `;
+        listContainer.appendChild(div);
+    });
+}
+
