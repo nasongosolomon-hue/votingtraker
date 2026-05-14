@@ -20,3 +20,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+/**
+ * --- VOTE PAGE LOGIC ---
+ * Handles the submission of the ballot
+ */
+function initVotingPage() {
+    const votingForm = document.getElementById('votingForm');
+    const feedbackBox = document.getElementById('formFeedback');
+    const feedbackMsg = document.getElementById('feedbackMessage');
+
+    votingForm.addEventListener('submit', (e) => {
+        e.preventDefault(); // Prevent page refresh
+
+       
