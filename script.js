@@ -37,4 +37,10 @@ function initVotingPage() {
         const voterID = document.getElementById('voterID').value;
         const selection = document.getElementById('candidateSelect').value;
 
-        
+        // Simple Validation Check
+        if (voterID.length < 5) {
+            alert("Please enter a valid Voter ID.");
+            return;
+        }
+
+       
