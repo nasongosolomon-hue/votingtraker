@@ -1,15 +1,19 @@
-/* --- 1. Root Variables --- */
+/* --- 1. THEME VARIABLES --- */
 :root {
-    --primary-color: #003366; 
-    --secondary-color: #d90429; 
-    --accent-color: #0077b6; 
-    --light-bg: #f8f9fa;
-    --dark-text: #2b2d42;
+    --primary: #0d1b2a;       /* Deep Navy */
+    --secondary: #1b263b;     /* Slate Blue */
+    --accent: #e63946;        /* Alert Red for buttons/accents */
+    --success: #2a9d8f;       /* Teal for success messages */
+    --light-bg: #f1f5f9;      /* Soft Grey background */
     --white: #ffffff;
-    --success: #28a745;
-    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 10px 15px -3px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
 }
 
+/* --- 2. CORE RESET --- */
 * {
     margin: 0;
     padding: 0;
@@ -17,59 +21,61 @@
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--dark-text);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     background-color: var(--light-bg);
+    color: var(--text-main);
+    line-height: 1.6;
 }
 
-/* --- 2.  Layout --- */
-h1, h2, h3 {
-    margin-bottom: 1rem;
-    color: var(--primary-color);
-}
-
+/* --- 3. NAVIGATION & HEADER --- */
 header {
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 1.5rem 5%;
+    background-color: var(--primary);
+    padding: 1rem 10%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    box-shadow: var(--shadow);
     position: sticky;
     top: 0;
-    z-index: 1000;
+    z-index: 100;
+    box-shadow: var(--shadow-md);
 }
 
-header h1 span {
-    color: var(--secondary-color);
-    font-weight: 800;
+.logo h1 {
+    color: var(--white);
+    font-size: 1.5rem;
+    letter-spacing: -1px;
 }
 
-/* --- 3. Navigation --- */
+.logo span {
+    color: var(--accent);
+}
+
 nav ul {
     display: flex;
     list-style: none;
-    gap: 20px;
+    gap: 2rem;
 }
 
 nav a {
     color: var(--white);
     text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: var(--transition);
+    opacity: 0.8;
 }
 
 nav a:hover, nav a.active {
-    color: #adc1d6;
-    border-bottom: 2px solid var(--secondary-color);
+    opacity: 1;
+    color: var(--white);
+    border-bottom: 2px solid var(--accent);
 }
 
-/* --- 4. Main Content Containers --- */
+/* --- 4. LAYOUT CONTAINERS --- */
 main {
-    padding: 2rem 5%;
-    min-height: 80vh;
+    max-width: 1100px;
+    margin: 3rem auto;
+    padding: 0 2rem;
 }
 
 .section-intro {
@@ -77,34 +83,39 @@ main {
     margin-bottom: 3rem;
 }
 
-/* --- 5. Grid System (Index Page) --- */
+.section-intro p {
+    color: var(--text-muted);
+}
+
+/* --- 5. GRID SYSTEM (HOME PAGE) --- */
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
 }
 
 .card {
     background: var(--white);
     padding: 2rem;
-    border-radius: 8px;
-    box-shadow: var(--shadow);
-    border-top: 5px solid var(--accent-color);
-    transition: transform 0.3s;
+    border-radius: 12px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 1px solid #e2e8f0;
 }
 
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
 }
 
-/* --- 6. Form Styling (Vote Page) --- */
+/* --- 6. FORM STYLING (VOTE PAGE) --- */
 .form-wrapper {
-    max-width: 600px;
+    max-width: 550px;
     margin: 0 auto;
     background: var(--white);
-    padding: 2.5rem;
-    border-radius: 12px;
-    box-shadow: var(--shadow);
+    padding: 3rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
 }
 
 .form-group {
@@ -113,116 +124,102 @@ main {
 
 label {
     display: block;
+    font-weight: 600;
     margin-bottom: 0.5rem;
-    font-weight: bold;
+    font-size: 0.9rem;
 }
 
 input, select {
     width: 100%;
-    padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    padding: 0.8rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
     font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: var(--secondary);
 }
 
 button {
-    background-color: var(--primary-color);
+    background-color: var(--primary);
     color: white;
-    padding: 0.8rem 1.5rem;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1rem;
-    font-weight: bold;
     width: 100%;
-    transition: background 0.3s;
+    padding: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
 }
 
 button:hover {
-    background-color: var(--accent-color);
+    background-color: var(--accent);
 }
 
-.btn-danger {
-    background-color: var(--secondary-color);
-    margin-top: 2rem;
-}
-
-/* --- 7. Results Dashboard --- */
+/* --- 7. RESULTS DASHBOARD --- */
 .stats-grid {
     display: flex;
-    gap: 1rem;
-    justify-content: center;
-    margin-bottom: 2rem;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
 }
 
 .stat-card {
-    background: var(--primary-color);
-    color: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    text-align: center;
     flex: 1;
+    background: var(--secondary);
+    color: white;
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
 }
 
-.log-container {
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    border: 1px solid #ddd;
+.stat-card h3 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
 }
 
 .vote-entry {
-    padding: 0.8rem;
-    border-bottom: 1px solid #eee;
+    background: white;
+    margin-bottom: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 8px;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    border-left: 5px solid var(--primary);
 }
 
-/* --- 8. Responsive Design (Media Queries) --- */
+/* --- 8. FEEDBACK & STATES --- */
+.hidden { display: none; }
 
-/* Tablet & Mobile */
+.feedback-box {
+    text-align: center;
+    padding: 2rem;
+    background: #ecfdf5;
+    border: 1px solid var(--success);
+    border-radius: 8px;
+    color: #065f46;
+}
+
+/* --- 9. RESPONSIVE DESIGN (MEDIA QUERIES) --- */
 @media (max-width: 768px) {
     header {
         flex-direction: column;
+        padding: 1rem;
+    }
+    
+    nav ul {
+        margin-top: 1rem;
         gap: 1rem;
     }
 
     .stats-grid {
         flex-direction: column;
     }
-}
-
-/* Mobile Small */
-@media (max-width: 480px) {
-    nav ul {
-        gap: 10px;
-        font-size: 0.9rem;
-    }
 
     .form-wrapper {
         padding: 1.5rem;
     }
-}
-
-/* --- 9. Footer --- */
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
-}
-
-/* --- 9. Footer --- */
-footer {
-    background: #222;
-    color: white;
-    text-align: center;
-    padding: 2rem;
-    margin-top: 4rem;
-}
-
-/* Helper Class */
-.hidden {
-    display: none;
 }
