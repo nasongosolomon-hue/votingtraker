@@ -1,0 +1,25 @@
+/* --- 1. Root Variables --- */
+:root {
+    --primary-color: #003366; /* Deep Navy */
+    --secondary-color: #d90429; /* Patriotic Red */
+    --accent-color: #0077b6; /* Professional Blue */
+    --light-bg: #f8f9fa;
+    --dark-text: #2b2d42;
+    --white: #ffffff;
+    --success: #28a745;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-text);
+    background-color: var(--light-bg);
+}
+
