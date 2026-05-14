@@ -213,3 +213,16 @@ footer {
     margin-top: 4rem;
 }
 
+/* --- 9. Footer --- */
+footer {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 4rem;
+}
+
+/* Helper Class */
+.hidden {
+    display: none;
+}
