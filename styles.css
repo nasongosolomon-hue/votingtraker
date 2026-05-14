@@ -66,3 +66,14 @@ nav a:hover, nav a.active {
     border-bottom: 2px solid var(--secondary-color);
 }
 
+/* --- 4. Main Content Containers --- */
+main {
+    padding: 2rem 5%;
+    min-height: 80vh;
+}
+
+.section-intro {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
