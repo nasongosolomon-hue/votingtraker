@@ -52,4 +52,8 @@ function initVotingPage() {
             date: new Date().toLocaleString()
         };
 
+        // Save to LocalStorage (Data Persistence)
+        electionData.push(newVote);
+        localStorage.setItem('electionData', JSON.stringify(electionData));
+
        
