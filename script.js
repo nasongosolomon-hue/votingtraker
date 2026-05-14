@@ -32,4 +32,9 @@ function initVotingPage() {
     votingForm.addEventListener('submit', (e) => {
         e.preventDefault(); // Prevent page refresh
 
-       
+        // Capture Form Data
+        const voterName = document.getElementById('voterName').value;
+        const voterID = document.getElementById('voterID').value;
+        const selection = document.getElementById('candidateSelect').value;
+
+        
