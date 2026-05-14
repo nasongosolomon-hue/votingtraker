@@ -103,3 +103,12 @@ function initResultsPage() {
     });
 }
 
+/**
+ * --- ADMIN TOOLS ---
+ */
+function clearData() {
+    if (confirm("WARNING: This will delete all cast ballots. Continue?")) {
+        localStorage.removeItem('electionData');
+        window.location.reload();
+    }
+}
