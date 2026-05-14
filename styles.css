@@ -178,3 +178,29 @@ button:hover {
     justify-content: space-between;
 }
 
+/* --- 8. Responsive Design (Media Queries) --- */
+
+/* Tablet & Mobile */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .stats-grid {
+        flex-direction: column;
+    }
+}
+
+/* Mobile Small */
+@media (max-width: 480px) {
+    nav ul {
+        gap: 10px;
+        font-size: 0.9rem;
+    }
+
+    .form-wrapper {
+        padding: 1.5rem;
+    }
+}
+
